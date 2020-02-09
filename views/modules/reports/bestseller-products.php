@@ -17,7 +17,7 @@ $salesTotal = ControllerParts::ctrShowAddingOfTheSales();
 <div class="box box-default">
 
             <div class="box-header with-border">
-              <h3 class="box-title">Spare Parts Top Usage</h3>
+              <h3 class="box-title">Medicine Top Seller</h3>
             
             </div>
           

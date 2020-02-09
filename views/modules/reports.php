@@ -20,7 +20,7 @@ if($_SESSION["profile"] == "Special" || $_SESSION["profile"] == "Seller"){
       
       <h1>
 
-        Parts Withdrawal Reports
+        Sales Reports
 
         <!-- <small>Manage Sales Reports</small> -->
 

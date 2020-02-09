@@ -19,7 +19,7 @@ if($_SESSION["profile"] == "Special"){
     <section class="content-header">
       <h1>
 
-        Parts Withdrawal Management
+        Sales Management
 
         <!-- <small>Manage Users</small> -->
 
@@ -29,7 +29,7 @@ if($_SESSION["profile"] == "Special"){
 
         <li><a href="home"><i class="fa fa-dashboard"></i> Home</a></li>
 
-        <li class="active">Spare Parts Management</li>
+        <li class="active">Sales Management</li>
 
       </ol>
       
@@ -45,7 +45,7 @@ if($_SESSION["profile"] == "Special"){
 
         <a href="createWithdrawal">
             <button class="btn btn-primary">
-              Withdraw Part
+              Create Sale
             </button>
         </a>
 

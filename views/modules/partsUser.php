@@ -20,7 +20,7 @@ if($_SESSION["profile"] == "Special"){
     <section class="content-header">
       <h1>
 
-        Parts Users
+        Customers
 
       </h1>
 

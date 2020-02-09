@@ -49,7 +49,7 @@ Issuers
 	
 	<div class="box-header with-border">
     
-    	<h3 class="box-title">Part Users</h3>
+    	<h3 class="box-title">Top Customers</h3>
   
   	</div>
 

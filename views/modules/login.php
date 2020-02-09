@@ -3,7 +3,8 @@
 <div class="login-box">
   <div class="login-logo">
     <!-- <a href="../../index2.html"><b>Admin</b>LTE</a> -->
-    <a href="../../index2.html"><img class="img-rounded" src="views/img/template/cog-yellow.jpg" style="width: 150px; height: 50px"></a>
+    <!-- <a href="../../index2.html"><img class="img-rounded" src="views/img/template/cog-yellow.jpg" style="width: 150px; height: 50px"></a> -->
+    <img class="img-rounded" src="views/img/template/jmsa-logo-h.png" style="width: 150px; height: 50px">
   </div>
 
   <!-- /.login-logo -->

@@ -9,7 +9,7 @@
 
         <!-- Home -->
 
-        <medium>Cognex Spare Parts Management</medium>
+        <medium>JMSA Pharmacy and Producs Inventory</medium>
 
       </h1>
 

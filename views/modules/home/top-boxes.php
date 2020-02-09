@@ -25,7 +25,7 @@ $totalProducts = count($products);
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>$<?php echo number_format($sales["total"],2); ?></h3>
+              <h3>P<?php echo number_format($sales["total"],2); ?></h3>
 
               <p>New Orders</p>
             </div>

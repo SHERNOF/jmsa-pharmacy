@@ -35,7 +35,7 @@
 				<li>
 					<a href="parts">
 						<i class="fa fa-product-hunt"></i>
-						<span>Spare Parts</span>
+						<span>Medicines</span>
 					</a>
 				</li>';
 			}
@@ -45,7 +45,7 @@
 				echo '<li>
 				<a href="partsUser">
 					<i class="fa fa-user"></i>
-					<span>Parts User</span>
+					<span>Customers</span>
 				</a>
 			</li>';
 
@@ -56,7 +56,7 @@
 				echo '<li class="treeview">
 				<a href="withdrawn">
 					<i class="fa fa-list-ul"></i>
-					<span>Parts Handling</span>
+					<span>Sales</span>
 					<span class="pull-right-container">
 						<i class="fa fa-angle-left pull-right"></i>
 					</span>
@@ -65,13 +65,13 @@
 					<li>
 						<a href="withdrawn">
 							<i class="fa fa-circle"></i>
-							<span>Parts Withdrawal</span>
+							<span>Sales Management</span>
 						</a>
 					</li>
 					<li>
 						<a href="createWithdrawal">
 							<i class="fa fa-circle"></i>
-							<span>Withdraw Parts</span>
+							<span>Create Sale</span>
 						</a>
 					</li>';
 			
@@ -82,7 +82,7 @@
 				echo '<li>
 						<a href="reports">
 							<i class="fa fa-circle"></i>
-							<span>Parts Report</span>
+							<span>Sales Report</span>
 						</a>
 					</li>';
 			}

@@ -20,7 +20,7 @@ if($_SESSION["profile"] == "Seller"){
     <section class="content-header">
       <h1>
 
-        Parts Categories
+        Medicine Categories
 
         <!-- <small>Manage Users</small> -->
 

@@ -22,7 +22,7 @@ if($_SESSION["profile"] == "Seller"){
 
         <!-- User Management -->
 
-        <medium>Spare Parts Management</medium>
+        <medium>Medicine List</medium>
       </h1>
       <ol class="breadcrumb">
         <li><a href="home"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -40,7 +40,7 @@ if($_SESSION["profile"] == "Seller"){
         <div class="box-header with-border">
 
             <button class="btn btn-primary" data-toggle="modal" data-target="#addPart" >
-              Add Part
+              Add Medicine
             </button>
       
         </div>

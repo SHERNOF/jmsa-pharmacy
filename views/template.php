@@ -9,12 +9,12 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>Test Engineering | Spare Parts</title>
+  <title>JMSA Pharmacy | General Merchandise</title>
 
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-  <link rel="icon" href="views/img/template/cog-logo-sm.jpg">
+  <!-- <link rel="icon" href="views/img/template/cog-logo-sm.jpg"> -->
 
   <!--=================================
   =            Plugins CSS            =
@@ -114,7 +114,7 @@
 
 </head>
 
-<body class="hold-transition skin-purple sidebar-collapse sidebar-mini login-page">
+<body class="hold-transition skin-blue sidebar-collapse sidebar-mini login-page">
 
 
 <!-- Site wrapper -->
