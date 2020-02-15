@@ -1,19 +1,3 @@
-<?php
-
-if($_SESSION["profile"] == "Special"){
-
-  echo '<script>
-
-    window.location = "home";
-
-  </script>';
-
-  return;
-
-}
-
-?>
-
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -55,6 +39,29 @@ if($_SESSION["profile"] == "Special"){
 
                 <div class="box">
 
+                <?php
+
+                  $item = "id";
+                  $value = $_GET["idWithdrawal"];
+
+                  $withdrawal = ControllerWithdrawal::ctrShowWithdrawal($item, $value);
+                  
+                  $itemUser = "id";
+                  $valueUser = $withdrawal["idIssuer"];
+
+                  $issuer = ControllerUsers::ctrShowUsers($itemUser, $valueUser);
+
+                  $itempartsUser = "id";
+                  $valuepartsUser = $withdrawal["idPartsUser"];
+
+                  $partsUser = ControllerpartsUser::ctrShowpartsUser($itempartsUser, $valuepartsUser);
+
+                  $taxPercentage = round($withdrawal["tax"] * 100 / $withdrawal["netPrice"]);
+
+                  // var_dump($withdrawal);
+                
+                ?>
+
                    <!--=====================================
                       Issuance Input
                     ======================================-->
@@ -62,8 +69,8 @@ if($_SESSION["profile"] == "Special"){
                     <div class="form-group">
                       <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                        <input type="text" class="form-control" id="newIssuer" name="newIssuer" value="<?php echo $_SESSION["name"]; ?>" readnly>
-                        <input type="hidden" name="idIssuer" value="<?php echo $_SESSION["id"]; ?>">
+                        <input type="text" class="form-control" id="newIssuer" name="newIssuer" value="<?php echo $issuer["name"]; ?>" readnly>
+                        <input type="hidden" name="idIssuer" value="<?php echo $issuer["id"]; ?>">
                       </div>
                     </div>
 
@@ -75,22 +82,8 @@ if($_SESSION["profile"] == "Special"){
                       <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-key"></i></span>
 
-                        <?php
+                      <input type="text" class="form-control" id="newWithdrawal" name="editWithdrawal" value="<?php echo $withdrawal["code"]; ?>" readonly>
 
-                          $item = null;
-                          $value = null;
-
-                          $withdrawal = ControllerWithdrawal::ctrShowWithdrawal($item, $value);
-
-                          if(!$withdrawal){
-                            echo '<input type="text" class="form-control" id="newWithdrawal" name="newWithdrawal" value="10001" readonly>';
-                          } else {
-                            foreach ($withdrawal as $key => $value){
-                            }
-                            $code = $value["code"] + 1;
-                            echo '<input type="text" class="form-control" id="newWithdrawal" name="newWithdrawal" value="'.$code.'" readonly>';
-                          }
-                        ?>
                       </div>
                     </div>
 
@@ -100,15 +93,16 @@ if($_SESSION["profile"] == "Special"){
 
                     <div class="form-group">
                       <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        <span class="input-group-addon"><i class="fa fa-users"></i></span>
                           <select type="text" class="form-control" id="selectpartsUser" name="selectpartsUser" required>
-                            <option value="">Select Parts User</option>  
+                            <option value="<?php echo $partsUser["id"]; ?>"><?php echo $partsUser["name"]; ?></option>  
 
                             <?php
                             $item = null;
                             $value = null;
+                            $order = "id";
 
-                            $PartsUser = ControllerpartsUser::ctrShowpartsUser($item, $value);
+                            $PartsUser = ControllerpartsUser::ctrShowpartsUser($item, $value, $order);
 
                             foreach($PartsUser as $key => $value){
                               echo '<option value="'.$value["id"].'">'.$value["name"].'</option>';
@@ -126,6 +120,55 @@ if($_SESSION["profile"] == "Special"){
 
                      <div class="form-group row newPart">
 
+                     <?php
+
+                     $partList = json_decode($withdrawal["parts"], true);
+                    
+
+                    foreach($partList as $key => $value){
+
+                      $item = "id";
+                      $valuePart = $value["id"];
+                      $order = "id";
+
+                      $answer = ControllerParts::ctrShowparts($item, $valuePart, $order);
+
+                      $lastStock = $answer["stock"] + $value["quantity"];
+                    
+
+                      echo '<div class="row" style="padding:5px 15px">
+  
+                      <div class="col-xs-6" style="padding-right:0px">
+  
+                          <div class="input-group">
+  
+                              <span class="input-group-addon"><button type="button" class="btn btn-danger btn-xs removePart" idPart="'.$value["id"].'"><i class="fa fa-times"></i></button></span>
+  
+                              <input type="text" class="form-control newPartDescription" idPart="'.$value["id"].'" name="addPartsButton" value="'.$value["description"].'" readonly required>
+                              
+                              
+  
+                          </div>
+  
+                      </div>
+  
+                      <div class="col-xs-3">
+                          
+                          <input type="number" class="form-control newPartQty" name="newPartQty" min="1" value="'.$value["quantity"].'" stock="'.$lastStock.'" newStock="'.$value["stock"].'" required>
+                          
+                      </div>
+  
+                      <div class="col-xs-3 enterPrice" style="padding-left:0px">
+                          <div class="input-group" >
+                              <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+                              <input type="text" class="form-control newPartPrice" name="newPartPrice" realPrice="'.$answer["sellingPrice"].'" value="'.$value["totalPrice"].'" readonly required>
+                          </div>
+                      </div>
+                      </div>';
+                      
+                    }
+
+                    ?>
 
                     </div>
 
@@ -150,9 +193,8 @@ if($_SESSION["profile"] == "Special"){
                       <table class="table">
                       
                             <thead>
-
-                                <th>Discount</th>
-                                <!-- <th>Taxes</th> -->
+                              
+                                <th>Taxes</th>
                                 <th>Total</th>    
                             
                             </thead>
@@ -161,54 +203,40 @@ if($_SESSION["profile"] == "Special"){
 
                               <tr>
 
-                              <td style="width:50%">
+                                <td style="width:50%">
                                   <div class="input-group">
-                                    <input type="number" class="form-control input-lg" min="0" id="newDiscSale" name="newDiscSale" placeholder="0" required>
+
+                                    <input type="number" class="form-control input-lg" min="0" id="newTaxSale" name="newTaxSale" value="<?php echo $taxPercentage; ?>" placeholder="0" required>
                                     
-                                    <input type="hidden" name="newNetPrice" id="newNetPrice" required>
-                                    <input type="hidden" name="newDiscPrice" id="newDiscPrice" required>
+                                    <input type="hidden" name="newTaxPrice" id="newTaxPrice" value="<?php echo $withdrawal["tax"]; ?>" required>
+                                    
+                                    <input type="hidden" name="newNetPrice" id="newNetPrice" value="<?php echo $withdrawal["netPrice"]; ?>" required>
                                     
                                     <span class="input-group-addon"><i class="fa fa-percent"></i></span>
                                   </div>
                                 </td>
 
-                                <!-- <td style="width:30%">
-                                  <div class="input-group">
-                                    <input type="number" class="form-control input-lg" value="0" min="0" id="newTaxSale" name="newTaxSale" placeholder="0" required>
-                                    
-                                    <input type="hidden" name="newNetPrice" id="newNetPrice" required>
-                                    <input type="hidden" name="newTaxPrice" id="newTaxPrice" required>
-                                    
-                                    <span class="input-group-addon"><i class="fa fa-percent"></i></span>
-                                  </div>
-                                </td> -->
-
                                 <td style="width:50%">
-
                                   <div class="input-group">
 
                                     <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
 
-                                    <input type="number" class="form-control input-lg" id="newPartsTotalSell" totalSale="" name="newPartsTotalSell" placeholder="0000" readonly required>
+                                    <input type="text" class="form-control input-lg" name="newPartsTotalSell" id="newPartsTotalSell" placeholder="00000" totalSale="<?php echo $withdrawal["netPrice"]; ?>"  value="<?php echo $withdrawal["totalPrice"]; ?>" readonly required>
 
-                                    <input type="hidden" name="saleTotal" id="saleTotal" required>
+                                    <input type="hidden" name="saleTotal" id="saleTotal" value="<?php echo $withdrawal["totalPrice"]; ?>" required>
                                     
-                                    
-                                    </div>
-                                    
-                                  </td>
-                                
-                                </tr>
+                                  </div>
+                                </td>
                               
-                              </tbody>
-                          
-                          </table>
+                              </tr>
                             
-                        </div>
-
-                      <hr>
-                    
-                    </div>
+                            </tbody>
+                        
+                        </table>
+                          
+                      </div>
+                  
+                  </div>
 
                   <hr>
 
@@ -218,17 +246,15 @@ if($_SESSION["profile"] == "Special"){
 
                   <div class="form-group row">
                   
-                    <div class="col-xs-6" style="padding-right: 0"> 
+                    <div class="col-xs-6" style="padding-right:0px"> 
                     
                       <div class="input-group">
                       
                         <select class="form-control" id="newPaymentMethod" name="newPaymentMethod" required>
-                        
                           <option value="">Select Payment Method</option>
                           <option value="cash">Cash</option>
                           <option value="CC">Credit Card</option>
                           <option value="DC">Debit Card</option>
-
                         </select>
                   
                       </div>
@@ -243,20 +269,24 @@ if($_SESSION["profile"] == "Special"){
 
                   <br>                  
 
-                </div>              
+                </div>
+              
+              <!-- </form> -->              
           
             </div>
 
-              <div class="box-footer">
-                <button type="submit" class="btn btn-primary pull-right">Save Withdrawals</button>
-              </div>
+            <div class="box-footer">
+
+            <button type="submit" class="btn btn-primary pull-right">Save Changes</button>
+
+            </div>
 
             </form>
 
             <?php
 
-            $saveWithdrawal = new ControllerWithdrawal();
-            $saveWithdrawal -> ctrCreateWithdrawal();
+            $editWithdrawal = new ControllerWithdrawal();
+            $editWithdrawal -> ctrEditWithdrawal();
             
           ?>
           
@@ -308,7 +338,7 @@ if($_SESSION["profile"] == "Special"){
     </div>
   
 
-<!--=====================================
+  <!--=====================================
 MODAL ADD PART USER
 ======================================-->
 
