@@ -382,7 +382,7 @@ $(".btnAddPart").click(function(){
            // addTax();
 
             // Adding Disc
-            addDisc()
+            addDisc();
 
             $(".newPartPrice").number(true, 2);
 
@@ -528,43 +528,43 @@ function addingTotalPrices(){
 
 /*=============================================
 ADD TAX
-=============================================*/
+// =============================================*/
 
-function addTax(){
+// function addTax(){
 
-	var tax = $("#newTaxSale").val();
+// 	var tax = $("#newTaxSale").val();
 
-	var totalPrice = $("#newPartsTotalSell").attr("totalSale");
+// 	var totalPrice = $("#newPartsTotalSell").attr("totalSale");
 
-	var taxPrice = Number(totalPrice * tax/100);
+// 	var taxPrice = Number(totalPrice * tax/100);
 
-	var totalwithTax = Number(taxPrice) + Number(totalPrice);
+// 	var totalwithTax = Number(taxPrice) + Number(totalPrice);
 	
-	$("#newPartsTotalSell").val(totalwithTax);
+// 	$("#newPartsTotalSell").val(totalwithTax);
 
-	$("#saleTotal").val(totalwithTax);
+// 	$("#saleTotal").val(totalwithTax);
 
-	$("#newTaxPrice").val(taxPrice);
+// 	$("#newTaxPrice").val(taxPrice);
 
-	$("#newNetPrice").val(totalPrice);
+// 	$("#newNetPrice").val(totalPrice);
 
-}
+// }
 
-/*=============================================
-WHEN TAX CHANGES
-=============================================*/
+// /*=============================================
+// WHEN TAX CHANGES
+// =============================================*/
 
-$("#newTaxSale").change(function(){
+// $("#newTaxSale").change(function(){
 
-	addTax();
+// 	addTax();
 
-});
+// });
 
-/*============================================
-FINAL PRICE FORMAT
-=============================================*/
+// /*============================================
+// FINAL PRICE FORMAT
+// =============================================*/
 
-$("#newPartsTotalSell").number(true, 2);
+// $("#newPartsTotalSell").number(true, 2);
 
 /*=============================================
 ADD DISCOUNT
@@ -577,7 +577,7 @@ function addDisc(){
   var totalPrice = $("#newPartsTotalSell").attr("totalSale");
   // var totalPrice = $("#newPartsTotalSell");
 
-	var discPrice = Math.round(Number(totalPrice * disc/100));
+	var discPrice = Number(totalPrice * disc/100);
 
 	var totalwithDisc = Number(totalPrice) - Number(discPrice);
 	
@@ -603,10 +603,14 @@ $("#newDiscSale").change(function(){
 
 });
 
+   // Part Price format
+   $("#newPartsTotalSell").number(true, 2);
+
 /*=============================================
 FINAL PRICE FORMAT
 =============================================*/
 
+// $("#newPartsTotalSell").number(true, 2);
 $("#newPartsTotalSell").number(true, 2);
 
 /*=============================================
