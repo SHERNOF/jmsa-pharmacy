@@ -117,7 +117,8 @@ $(".tableWithdrawal tbody").on("click", "button.addPartsButton", function(){
 
                     '<!-- Parts Description -->'+
 
-                    '<div class="col-xs-6" style="padding-right:0px">'+
+                    '<div class="col-xs-5" style="padding-right:0px">'+
+                    // '<div class="col-xs-6" style="padding-right:0px">'+
 
                         '<div class="input-group">'+
 
@@ -136,7 +137,8 @@ $(".tableWithdrawal tbody").on("click", "button.addPartsButton", function(){
                     '</div>'+
 
                     '<!-- Parts Price -->  '+
-                    '<div class="col-xs-3 enterPrice" style="padding-left:0px">'+
+                    // '<div class="col-xs-3 enterPrice" style="padding-left:0px">'+
+                    '<div class="col-xs-4 enterPrice" style="padding-left:0px">'+
                         '<div class="input-group" >'+
                             '<span class="input-group-addon"><i class="ion ion-social-usd"></i></span>'+
                             '<input type="text" class="form-control newPartPrice" name="newPartPrice" realPrice="'+price+'" value="'+price+'" readonly required>'+

@@ -131,7 +131,7 @@ if($_SESSION["profile"] == "Special"){
 
                   <td>'.$value["withdrawalDate"].'</td>
 
-                  <td>
+                  <td  width="115px">
 
                     <div class="btn-group">
                         
@@ -145,7 +145,7 @@ if($_SESSION["profile"] == "Special"){
 
                       if($_SESSION["profile"] =="Administrator"){
 
-                        echo '<button class="btn btn-warning btnEditWithdrawal" idWithdrawal="'.$value["id"].'"><i class="fa fa-pencil"></i></button>
+                        echo '<button class="btn btn-warning btnEditWithdrawal" idWithdrawal="'.$value["id"].'" ><i class="fa fa-pencil"></i></button>
                         
                         <button class="btn btn-danger btnDeleteWithdrawal" idWithdrawal="'.$value["id"].'"><i class="fa fa-times"></i></button>';
 

@@ -19,7 +19,7 @@ if($_SESSION["profile"] == "Special"){
     <section class="content-header">
       <h1>
 
-        Parts Withdrawal
+        Medicine Sale
 
         <!-- <small>Manage Users</small> -->
 
@@ -29,7 +29,7 @@ if($_SESSION["profile"] == "Special"){
 
         <li><a href="home"><i class="fa fa-dashboard"></i> Home</a></li>
 
-        <li class="active">Spare Parts Management</li>
+        <li class="active">Medicine Sale</li>
 
       </ol>
       
@@ -43,7 +43,9 @@ if($_SESSION["profile"] == "Special"){
                       FORM
       ======================================-->
 
-      <div class="col-lg-5 col-xs-12">
+      
+      <!-- <div class="col-lg-5 col-xs-12"> -->
+      <div class="col-lg-5 col-xs-5">
       
         <div class="box box-success">
         
@@ -135,7 +137,7 @@ if($_SESSION["profile"] == "Special"){
                       Add Parts Button
                      ======================================-->
 
-                      <button type="button" class="btn btn-default hidden-lg btnAddPart">Add Parts</button>
+                      <!-- <button type="button" class="btn btn-default hidden-lg btnAddPart">Add Parts</button> -->
 
                       <hr>
 
@@ -145,7 +147,8 @@ if($_SESSION["profile"] == "Special"){
                       Taxes and Total Price
                      ======================================-->
                       
-                    <div class="col-xs-8 pull-right">
+                    <!-- <div class="col-xs-8 pull-right"> -->
+                    <div class="col-xs-12 pull-right">
                     
                       <table class="table">
                       
@@ -163,7 +166,7 @@ if($_SESSION["profile"] == "Special"){
 
                               <td style="width:50%">
                                   <div class="input-group">
-                                    <input type="number" class="form-control input-lg" min="0" id="newDiscSale" name="newDiscSale" placeholder="0" required>
+                                    <input type="number" class="form-control input-md" min="0" id="newDiscSale" name="newDiscSale" placeholder="0" required>
                                     
                                     <input type="hidden" name="newNetPrice" id="newNetPrice" required>
                                     <input type="hidden" name="newDiscPrice" id="newDiscPrice" required>
@@ -189,7 +192,7 @@ if($_SESSION["profile"] == "Special"){
 
                                     <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
 
-                                    <input type="number" class="form-control input-lg" id="newPartsTotalSell" totalSale="" name="newPartsTotalSell" placeholder="0000" readonly required>
+                                    <input type="number" class="form-control input-md" id="newPartsTotalSell" totalSale="" name="newPartsTotalSell" placeholder="0000" readonly required>
 
                                     <input type="hidden" name="saleTotal" id="saleTotal" required>
                                     
@@ -224,7 +227,7 @@ if($_SESSION["profile"] == "Special"){
                       
                         <select class="form-control" id="newPaymentMethod" name="newPaymentMethod" required>
                         
-                          <option value="">Select Payment Method</option>
+                          <option value="">Payment Method</option>
                           <option value="cash">Cash</option>
                           <option value="CC">Credit Card</option>
                           <option value="DC">Debit Card</option>
@@ -270,7 +273,10 @@ if($_SESSION["profile"] == "Special"){
                       Table Parts
         ======================================-->
 
-      <div class="col-lg-7 hidden-md hidden-sm hidden-xs">
+      
+      <!-- <div class="col-lg-7 hidden-md hidden-sm hidden-xs"> -->
+      <div class="col-lg-7 col-sm-7 ">
+      
 
         <div class="box box-warning">
 

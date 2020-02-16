@@ -27,7 +27,8 @@
                       FORM
       ======================================-->
 
-      <div class="col-lg-5 col-xs-12">
+      <!-- <div class="col-lg-5 col-xs-12"> -->
+      <div class="col-lg-5 col-xs-5">
       
         <div class="box box-success">
         
@@ -181,7 +182,7 @@
                       Add Parts Button
                      ======================================-->
 
-                      <button type="button" class="btn btn-default hidden-lg btnAddPart">Add Parts</button>
+                      <!-- <button type="button" class="btn btn-default hidden-lg btnAddPart">Add Parts</button> -->
 
                       <hr>
 
@@ -191,7 +192,8 @@
                       Discount and Total Price
                      ======================================-->
                       
-                    <div class="col-xs-8 pull-right">
+                    <!-- <div class="col-xs-8 pull-right"> -->
+                    <div class="col-xs-12 pull-right">
                     
                       <table class="table">
                       
@@ -211,7 +213,7 @@
                                   <div class="input-group">
 
                                     <!-- <input type="number" class="form-control input-lg" min="0" id="newTaxSale" name="newTaxSale" value="<?php echo $taxPercentage; ?>" placeholder="0" required> -->
-                                    <input type="number" class="form-control input-lg" min="0" id="newDiscSale" name="newDiscSale" value="<?php echo $discPercentage; ?>" placeholder="0" required>
+                                    <input type="number" class="form-control input-md" min="0" id="newDiscSale" name="newDiscSale" value="<?php echo $discPercentage; ?>" placeholder="0" required>
                                     
                                     <!-- <input type="hidden" name="newTaxPrice" id="newTaxPrice" value="<?php echo $withdrawal["tax"]; ?>" required> -->
                                     <input type="hidden" name="newDiscPrice" id="newDiscPrice" value="<?php echo $withdrawal["disc"]; ?>" required>
@@ -228,7 +230,7 @@
                                     <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
 
                                     <!-- <input type="text" class="form-control input-lg" name="newPartsTotalSell" id="newPartsTotalSell" placeholder="00000" totalSale="<?php echo $withdrawal["netPrice"]; ?>"  value="<?php echo $withdrawal["totalPrice"]; ?>" readonly required> -->
-                                    <input type="text" class="form-control input-lg" name="newPartsTotalSell" id="newPartsTotalSell" placeholder="00000" totalSale="<?php echo $withdrawal["totalPrice"]; ?>"  value="<?php echo $withdrawal["netPrice"]; ?>" readonly required>
+                                    <input type="text" class="form-control input-md" name="newPartsTotalSell" id="newPartsTotalSell" placeholder="00000" totalSale="<?php echo $withdrawal["totalPrice"]; ?>"  value="<?php echo $withdrawal["netPrice"]; ?>" readonly required>
 
                                     <!-- <input type="hidden" name="saleTotal" id="saleTotal" value="<?php echo $withdrawal["totalPrice"]; ?>" required> -->
                                     <input type="hidden" name="saleTotal" id="saleTotal" value="<?php echo $withdrawal["netPrice"]; ?>" required>
@@ -259,7 +261,7 @@
                       <div class="input-group">
                       
                         <select class="form-control" id="newPaymentMethod" name="newPaymentMethod" required>
-                          <option value="">Select Payment Method</option>
+                          <option value="">Payment Method</option>
                           <option value="cash">Cash</option>
                           <option value="CC">Credit Card</option>
                           <option value="DC">Debit Card</option>
@@ -308,7 +310,8 @@
                       Table Parts
         ======================================-->
 
-      <div class="col-lg-7 hidden-md hidden-sm hidden-xs">
+      <!-- <div class="col-lg-7 hidden-md hidden-sm hidden-xs"> -->
+      <div class="col-lg-7 col-sm-7 ">
 
         <div class="box box-warning">
 
