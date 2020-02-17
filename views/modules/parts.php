@@ -128,7 +128,7 @@ if($_SESSION["profile"] == "Seller"){
           <div class="form-group">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-code"></i></span>
-                <input class="form-control input-lg" type="text" id="newCode" name="newCode" placeholder="Add Code" required readonly>
+                <input class="form-control input-lg" type="text" id="newCode" name="newCode" placeholder="Add Code" required >
               </div>
           </div>    
 
@@ -254,7 +254,7 @@ if($_SESSION["profile"] == "Seller"){
         <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-code"></i></span>
-              <input class="form-control input-lg" type="text" id="editCode" name="editCode" placeholder="Add Code" required readonly>
+              <input class="form-control input-lg" type="text" id="editCode" name="editCode" placeholder="Add Code" required >
             </div>
         </div>    
 
