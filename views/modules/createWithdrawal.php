@@ -168,23 +168,13 @@ if($_SESSION["profile"] == "Special"){
                                   <div class="input-group">
                                     <input type="number" class="form-control input-md" min="0" id="newDiscSale" name="newDiscSale" placeholder="0" required>
                                     
-                                    <input type="hidden" name="newNetPrice" id="newNetPrice" required>
                                     <input type="hidden" name="newDiscPrice" id="newDiscPrice" required>
+
+                                    <input type="hidden" name="newNetPrice" id="newNetPrice" required>
                                     
                                     <span class="input-group-addon"><i class="fa fa-percent"></i></span>
                                   </div>
                                 </td>
-
-                                <!-- <td style="width:30%">
-                                  <div class="input-group">
-                                    <input type="number" class="form-control input-lg" value="0" min="0" id="newTaxSale" name="newTaxSale" placeholder="0" required>
-                                    
-                                    <input type="hidden" name="newNetPrice" id="newNetPrice" required>
-                                    <input type="hidden" name="newTaxPrice" id="newTaxPrice" required>
-                                    
-                                    <span class="input-group-addon"><i class="fa fa-percent"></i></span>
-                                  </div>
-                                </td> -->
 
                                 <td style="width:50%">
 
@@ -192,7 +182,7 @@ if($_SESSION["profile"] == "Special"){
 
                                     <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
 
-                                    <input type="number" class="form-control input-md" id="newPartsTotalSell" totalSale="" name="newPartsTotalSell" placeholder="0000" readonly required>
+                                    <input type="number" class="form-control newPartsTotalSell" name="newPartsTotalSell" id="newPartsTotalSell" totalSale=""  placeholder="0000" readonly required>
 
                                     <input type="hidden" name="saleTotal" id="saleTotal" required>
                                     

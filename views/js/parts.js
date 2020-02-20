@@ -98,17 +98,6 @@ $("#newCategory").change(function(){
 Selling Price
 =============================================*/
 
-// $("#newPriceBuy", "#editPriceBuy").change(function(){
-
-//     if($(".percentage").prop("checked")){
-
-//     var percentageValue = $(".newPercentage").val();
-    
-//     var percentage = Number(($("#newPriceBuy").val()*percentageValue/100))+Number($("#newPriceBuy").val());
-
-//     $("#newPriceSell").val(percentage);
-//     $("#newPriceSell").prop("readonly", true);
-//     }
 
 $("#newPriceBuy, #editPriceBuy").change(function(){
 
@@ -133,36 +122,6 @@ $("#newPriceBuy, #editPriceBuy").change(function(){
 /*=============================================
 New Percentage Change
 =============================================*/
-
-// $(".newPercentage").change(function(){
-
-//     if($(".percentage").prop("checked")){
-
-//         var percentageValue = $(".newPercentage").val();
-        
-//         var percentage = Number(($("#newPriceBuy").val()*percentageValue/100))+Number($("#newPriceBuy").val());
-
-//         var editPercentage = Number(($("#editPriceBuy").val()*percentageValue/100))+Number($("#editPriceBuy").val());
-        
-    
-//         $("#newPriceSell").val(percentage);
-//         $("#newPriceSell").prop("readonly", true);
-
-//         $("#editPriceSell").val(editPercentage);
-// 		$("#editPriceSell").prop("readonly",true);
-
-//     }
-// })
-
-// $(".percentage").on("ifUnchecked", function(){
-//     $("#newPriceSell").prop("readonly", false);
-//     $("#editPriceSell").prop("readonly", false);
-// })
-
-// $(".percentage").on("ifChecked", function(){
-//     $("#newPriceSell").prop("readonly", true);
-//     $("#editPriceSell").prop("readonly", true);
-// })
 
 $(".newPercentage").change(function(){
 
@@ -248,12 +207,6 @@ $(".PicParts").change(function(){
 /*=============================================
 Edit Parts
 =============================================*/
-
-
-    // $(".PartsTable tbody").on("click", "button.btnEditPart", function(){
-    //     var idPart = $(this).attr("idPart");
-    //     console.log("idPart", idPart);
-    // })
 
     $(".PartsTable tbody").on("click", "button.btnEditPart", function(){
 	var idPart = $(this).attr("idPart");

@@ -28,9 +28,9 @@ class printBill {
         
         $withdrawaldate = substr($answerWithdrawal["withdrawalDate"],0,-8);
         $parts = json_decode($answerWithdrawal["parts"], true);
-        $netPrice = number_format($answerWithdrawal["netPrice"],2);
+        // $netPrice = number_format($answerWithdrawal["netPrice"],2);
         $disc = number_format($answerWithdrawal["disc"],2);
-        $totalPrice = number_format($answerWithdrawal["totalPrice"],2);
+        $totalPrice = number_format($answerWithdrawal["netPrice"],2);
 
 
         // Parts User Information
@@ -64,14 +64,17 @@ $block1 = <<<EOF
 		
 		<tr>
 			
-			<td style="width:150px"><img src="images/jmsa-logo-h.png"></td>
+			<td style="width:150px"><img src="images/logo-negro-bloque.png"></td>
 
 			<td style="background-color:white; width:140px">
 				
 				<div style="font-size:8.5px; text-align:right; line-height:15px;">
+					
+					<br>
+					NIT: 71.759.963-9
 
 					<br>
-					ADDRESS: Pila, Laguna
+					ADDRESS: Singapore
 
 				</div>
 
@@ -82,10 +85,10 @@ $block1 = <<<EOF
 				<div style="font-size:8.5px; text-align:right; line-height:15px;">
 					
 					<br>
-					CELLPHONE: 639179106826
+					CELLPHONE: 93851908
 					
 					<br>
-					sherlyndapol@yahoo.com
+					sherwin.nofuente@cognex.com
 
 				</div>
 				
@@ -149,7 +152,7 @@ $block3 = <<<EOF
 		<td style="border: 1px solid #777; background-color:white; width:260px; text-align:center">Part</td>
 		<td style="border: 1px solid #777; background-color:white; width:80px; text-align:center">quantity</td>
 		<td style="border: 1px solid #777; background-color:white; width:100px; text-align:center">value Unit.</td>
-		<td style="border: 1px solid #777; background-color:white; width:100px; text-align:center">Gross Price</td>
+		<td style="border: 1px solid #777; background-color:white; width:100px; text-align:center">value Total</td>
 
 		</tr>
 
@@ -172,7 +175,6 @@ $answerPart = ControllerParts::ctrShowParts($itemPart, $valuePart, $order);
 $valueUnit = number_format($answerPart["sellingPrice"], 2);
 
 $totalPrice = number_format($item["totalPrice"], 2);
-
 
 $block4 = <<<EOF
 
@@ -226,7 +228,19 @@ $block5 = <<<EOF
 
 		</tr>
 		
+		<tr>
 		
+			<td style="border-right: 1px solid #666; color:#333; background-color:white; width:340px; text-align:center"></td>
+
+			<td style="border: 1px solid #666;  background-color:white; width:100px; text-align:center">
+				Net:
+			</td>
+
+			// <td style="border: 1px solid #666; color:#333; background-color:white; width:100px; text-align:center">
+			// 	$ $netPrice
+			// </td>
+
+		</tr>
 
 		<tr>
 
@@ -251,7 +265,7 @@ $block5 = <<<EOF
 			</td>
 			
 			<td style="border: 1px solid #666; color:#333; background-color:white; width:100px; text-align:center">
-				$ $netPrice
+				$ $totalPrice
 			</td>
 
 		</tr>

@@ -25,7 +25,6 @@ LOAD DYNAMIC PartS TABLE
 // 	success:function(answer){
 		
 // 		console.log("answer", answer);
-
 // 	}
 
 // })
@@ -432,6 +431,8 @@ $(".formWithdrawal").on("change", "select.newPartDescription", function(){
             // GROUP PartS IN JSON FORMAT
 
             listParts();
+
+
       	}
     })
 })
@@ -522,9 +523,7 @@ function addingTotalPrices(){
     
     $("#newPartsTotalSell").val(addingTotalPrice);
     $("#saleTotal").val(addingTotalPrice);
-    $("#newPartsTotalSell").attr("totalSale",addingTotalPrice);
-    // $(".newPartsTotalSell").number(true, 2);
-    // $(".saleTotal").number(true, 2);
+	  $("#newPartsTotalSell").attr("totalSale",addingTotalPrice);
 
 }
 
@@ -605,13 +604,15 @@ $("#newDiscSale").change(function(){
 
 });
 
+   // Part Price format
+   $("#newPartsTotalSell").number(true, 2);
+
 /*=============================================
 FINAL PRICE FORMAT
 =============================================*/
 
-
-$('#newPartsTotalSell').number( true, 2);
-$("#saleTotal").number( true, 2);
+// $("#newPartsTotalSell").number(true, 2);
+$("#newPartsTotalSell").number(true, 2);
 
 /*=============================================
 SELECT PAYMENT METHOD
